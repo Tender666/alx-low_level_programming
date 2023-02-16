@@ -1,6 +1,6 @@
 #include <stdio.h>
 /*
- * main - as said , I need to print a line using puts , not print
+ * main - print a line using puts
  *
  * Return: 0
 */
