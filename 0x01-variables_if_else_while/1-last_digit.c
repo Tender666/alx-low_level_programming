@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /**
- * main -> assigns a random number to the variable n  
+ * main - assigns a random number to the variable n  
  * print last digit of the number stored in n
  * Return:Always 0 (Success)
  */
@@ -32,6 +32,6 @@ int main(void)
 
 	printf("\n");
 
-	return (0);
+	return (0); Sucessful
 
 }
