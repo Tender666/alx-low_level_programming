@@ -25,7 +25,7 @@ int _atoi(char *str)
 		{
 			break;
 		}
-		result = result * 10 + (stre[i] - '0');
+		result = result * 10 + (str[i] - '0');
 	}
 
 	return (sign * result);
