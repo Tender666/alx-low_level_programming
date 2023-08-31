@@ -1,30 +1,28 @@
 /*
- * 0x06. C - More pointers, arrays and strings
- * task 9
+ * 0x08. C - Recursion
+ * task 8 adv "not finished yet"
  */
-#include "main.h"
+#include <stdio.h>
 /**
- * print_number - encodes a string into  rot13.
- * @n: number
- * Return: *src encodd string into  rot13.
+ * wildcmp - compares two strings and returns 1
+ * @s1: string refrance
+ * @s2: string refrance
+ * Return: 1 palindrome or 0 if not
  */
-void print_number(int n)
+int wildcmp(char *s1, char *s2)
 {
-	unsigned int n1;
-
-	if (n < 0)
+	if ((*s1 == '\0') && (*s2 == '\0'))
+		return (1);
+	if (*s1 == *s2)
 	{
-		n1 = -n;
-		_putchar('-');
-	} else
-	{
-		n1 = n;
+		return (wildcmp(s1 + 1, s2 + 1));
 	}
-
-	if (n1 / 10)
+	if (*s2 == '*')
 	{
-		print_number(n1 / 10);
+		if (*(s2 + 1) == '*')
+			return (wildcmp(s1, s2 + 1));
+		if ((wildcmp(s1 + 1, s2)) || (wildcmp(s1, s2 + 1)))
+			return (1);
 	}
-
-	_putchar((n1 % 10) + '0');
+	return (0);
 }
