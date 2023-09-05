@@ -11,23 +11,18 @@
  */
 char *create_array(unsigned int size, char c)
 {
-    char *array;  // Pointer to the dynamically allocated array
+	char *array;
+	unsigned int i;
 
-    // Check if the requested size is 0, and return NULL if so
-    if (size == 0)
-        return (NULL);
+	if (size == 0)
+		return (NULL);
 
-    // Allocate memory for the array using malloc
-    array = (char *)malloc(sizeof(char) * size);
+	array = malloc(sizeof(char) * size);
+	if (array == NULL)
+		return (NULL);
 
-    // Check if memory allocation was successful
-    if (array == NULL)
-        return (NULL);
+	for (i = 0; i < size; i++)
+		array[i] = c;
 
-    // Initialize each element of the array with the specified character
-    for (unsigned int i = 0; i < size; i++)
-        array[i] = c;
-
-    return (array);  // Return a pointer to the created array
+	return (array);
 }
-
